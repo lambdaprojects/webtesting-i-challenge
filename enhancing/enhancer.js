@@ -7,6 +7,10 @@ module.exports = {
 
 function succeed(item) {
   console.log(`:: ITEM IN SUCCEED IS ${JSON.stringify(item)}::`);
+  if (item.enhancement < 20) {
+    item.enhancement = item.enhancement + 1;
+  }
+  console.log(`:: SUCCEEDED ITEM IS ${JSON.stringify(item)}::`);
   return { ...item };
 }
 
