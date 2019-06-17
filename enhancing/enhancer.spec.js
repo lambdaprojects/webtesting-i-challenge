@@ -37,10 +37,21 @@ describe("Enhancer.js", () => {
 
   //TEST CASE FOR FAILURE FUNCTIONALITY
   describe("Fail", () => {
-    it("Modified for enhancement failure", () => {
-      expect(false).toBe(false);
+    it("Item's enhancement is less than 15, durability is decreased by 5", () => {
+      let item = { name: "Item5", durability: 45, enhancement: 12 };
+      expect(enhancer.fail(item).durability).toBe(40);
+    });
+    it("Item's enhancement is more than 15, durability is decreased by 10", () => {
+      let item = { name: "Item6", durability: 76, enhancement: 17 };
+      expect(enhancer.fail(item).durability).toBe(66);
+    });
+    it("Item's enhancement is more than 16, enhancement is decreased by 1", () => {
+      let item = { name: "Item7", durability: 76, enhancement: 17 };
+      expect(enhancer.fail(item).enahancement).toBe(16);
     });
   });
+
+  //TEST CASE FOR GET FUNCTIONALITY
   describe("Get", () => {
     it("Stretch problem - working with get", () => {
       expect(false).toBe(false);
