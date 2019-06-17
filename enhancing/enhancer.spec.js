@@ -53,8 +53,16 @@ describe("Enhancer.js", () => {
 
   //TEST CASE FOR GET FUNCTIONALITY
   describe("Get", () => {
-    it("Stretch problem - working with get", () => {
-      expect(false).toBe(false);
+    it("Name is unaltered if enahancement level is 0", () => {
+      let item = { name: "Item8", durability: 23, enhancement: 0 };
+      expect(enhancer.get(item).name).toBe(item.name);
+    });
+
+    it("Name is changed to [+durability]Name if enahancement level is greater than 0", () => {
+      let item = { name: "Item8", durability: 23, enhancement: 25 };
+      let newName = `[+${item.durability}] ${item.name}`;
+      //expect(enhancer.get(item).name).toBe(newName);
+      expect(enhancer.get(item).name).toBe(newName);
     });
   });
 });
