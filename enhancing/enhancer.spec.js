@@ -4,7 +4,8 @@ const enhancer = require("./enhancer.js");
 describe("Enhancer.js", () => {
   describe("Repair", () => {
     it("Durability restored to 100", () => {
-      expect(true).toBe(true);
+      let item = { name: "Item1", durability: 120, enhancement: 10 };
+      expect(enhancer.repair(item).durability).toBe(100);
     });
   });
   describe("Success", () => {

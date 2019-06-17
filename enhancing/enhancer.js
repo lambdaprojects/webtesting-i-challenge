@@ -2,7 +2,7 @@ module.exports = {
   succeed,
   fail,
   repair,
-  get,
+  get
 };
 
 function succeed(item) {
@@ -14,6 +14,9 @@ function fail(item) {
 }
 
 function repair(item) {
+  console.log(`Item is ${JSON.stringify(item)}`);
+  item = { ...item, durability: 100 };
+  console.log(`Item is ${JSON.stringify(item)}`);
   return { ...item };
 }
 
