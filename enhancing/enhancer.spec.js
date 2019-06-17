@@ -47,7 +47,7 @@ describe("Enhancer.js", () => {
     });
     it("Item's enhancement is more than 16, enhancement is decreased by 1", () => {
       let item = { name: "Item7", durability: 76, enhancement: 17 };
-      expect(enhancer.fail(item).enahancement).toBe(16);
+      expect(enhancer.fail(item).enhancement).toBe(16);
     });
   });
 

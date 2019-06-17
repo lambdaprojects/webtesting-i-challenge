@@ -15,6 +15,18 @@ function succeed(item) {
 }
 
 function fail(item) {
+  if (item.enhancement < 15) {
+    // Enhancement is less than 15 decrease durability by 5
+    item.durability = item.durability - 5;
+  } else {
+    // Enhancement is more than 15 decrease durability by 10
+    item.durability = item.durability - 10;
+    if (item.enhancement > 16) {
+      // Enhancement is more than 16 decrease enhancement by 1
+      item.enhancement = item.enhancement - 1;
+    }
+  }
+  console.log(`:: FAILED ITEM IS ${JSON.stringify(item)}::`);
   return { ...item };
 }
 
